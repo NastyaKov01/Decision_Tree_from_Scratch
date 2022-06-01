@@ -16,7 +16,7 @@ class SplitTest(StageTest):
         output = output.replace(",", "").replace("]", "[").split("[")
         output = [x for x in output if x != "" and x != " "]
         if len(output) != 3:
-            raise WrongAnswer("Your answer should contain five items: float value, string, value, two lists.")
+            raise WrongAnswer("Your answer should contain five items: float value, string, value and two lists.")
         res = []
         first = output[0].strip().split()
         res.append(float(first[0]))
