@@ -16,11 +16,14 @@ class RecSplitTest(StageTest):
         res = output.split("\n")
         res = [x.strip() for x in res]
         if len(res) != 2:
-            raise WrongAnswer("Wrong number of splits. Your function should make split twice(on given data).")
+            raise WrongAnswer("Wrong number of splits. Your function should make a split twice (on given data)."
+                              "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         if res[0] != ANSWER[0]:
-            raise WrongAnswer("Wrong first log message. Correct message template: 'Made split: Sex is 1'.")
+            raise WrongAnswer("Wrong first log message. Correct message template: 'Made split: Sex is 1'."
+                              "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         if res[1] != ANSWER[1]:
-            raise WrongAnswer("Wrong second log message. Correct message template: 'Made split: Sex is 1'.")
+            raise WrongAnswer("Wrong second log message. Correct message template: 'Made split: Sex is 1'."
+                              "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         return CheckResult.correct()
 
 

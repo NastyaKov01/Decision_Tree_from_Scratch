@@ -17,11 +17,11 @@ class TreeTest(StageTest):
         res = output.split("\n")
         res = [x.strip() for x in res]
         if len(res) != 4:
-            raise WrongAnswer("Wrong number of splits. Your model should make split four times(on given data).")
+            raise WrongAnswer("Wrong number of splits. Your model should make a split four times (on given data).")
         for i in range(4):
             if res[i] != ANSWER[i]:
                 raise WrongAnswer(f"Wrong log message on line {i+1}. Correct message template: 'Made split: Sex is 1'."
-                                  "\nIt may be useful to check the traversal order: go to the left child first.")
+                                  "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         return CheckResult.correct()
 
 

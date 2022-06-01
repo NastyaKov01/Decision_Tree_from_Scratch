@@ -23,7 +23,7 @@ class TreePredTest(StageTest):
         pr = TestedProgram()
         pr.start()
         if not pr.is_waiting_input():
-            raise WrongAnswer("You program should input the path to the files")
+            raise WrongAnswer("You program should input two paths to the files split by space")
         output = pr.execute("test/data_stage5_train.csv test/data_stage5_test.csv").strip()
         res = output.split("\n")
         res = [x.strip() for x in res]
@@ -42,7 +42,7 @@ class TreePredTest(StageTest):
                     raise WrongAnswer("Wrong prediction for the second sample.")
                 else:
                     raise WrongAnswer(f"Wrong log message on line {i+1}."
-                                      "\nIt may be useful to check the traversal order: go to the left child first.")
+                                      "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
         return CheckResult.correct()
 
 
