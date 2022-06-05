@@ -58,7 +58,7 @@ class TreeNumTest(StageTest):
                 elif i == 27:
                     raise WrongAnswer("Wrong prediction for the second sample.")
                 else:
-                    raise WrongAnswer(f"Wrong log message on line {i+1}."
+                    raise WrongAnswer(f"Wrong log message on the line {i+1}."
                                       "\nIt may be useful to check the traversal order: go to the left child first.")
         return CheckResult.correct()
 

@@ -27,15 +27,15 @@ class SplitTest(StageTest):
         if len(res) != 5:
             raise WrongAnswer("Your answer should contain five items: float value, string, value, two lists.")
         if res[0] != ANSWER[0]:
-            raise WrongAnswer("Wrong Gini score (first item in your answer).")
+            raise WrongAnswer("Wrong Gini score (the first item in your answer).")
         if res[1] != ANSWER[1]:
-            raise WrongAnswer("Wrong threshold feature (second item in your answer).")
+            raise WrongAnswer("Wrong threshold feature (the second item in your answer).")
         if res[2] != ANSWER[2]:
-            raise WrongAnswer("Wrong threshold value (third item in your answer).")
+            raise WrongAnswer("Wrong threshold value (the third item in your answer).")
         if res[3] != ANSWER[3]:
-            raise WrongAnswer("Wrong list of left node indexes (fourth item in your answer).")
+            raise WrongAnswer("Wrong list of left node indexes (the fourth item in your answer).")
         if res[4] != ANSWER[4]:
-            raise WrongAnswer("Wrong list of right node indexes (fifth item in your answer).")
+            raise WrongAnswer("Wrong list of right node indexes (the fifth item in your answer).")
         return CheckResult.correct()
 
 

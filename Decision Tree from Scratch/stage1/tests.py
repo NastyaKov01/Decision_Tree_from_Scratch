@@ -23,9 +23,9 @@ class FuncTest(StageTest):
             raise WrongAnswer(f"You should print two values split with a space. Found {len(res)}.")
         res = [round(float(x), 2) for x in res]
         if res[0] != ANSWER[0]:
-            raise WrongAnswer("Wrong answer of the function computing Gini impurity (first value).")
+            raise WrongAnswer("Wrong answer of the function computing Gini impurity (the first value).")
         if res[1] != ANSWER[1]:
-            raise WrongAnswer("Wrong answer of the function computing weighted Gini impurity (second value).")
+            raise WrongAnswer("Wrong answer of the function computing weighted Gini impurity (the second value).")
         return CheckResult.correct()
 
 

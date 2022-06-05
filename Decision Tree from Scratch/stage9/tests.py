@@ -17,9 +17,9 @@ class Eval2Test(StageTest):
         if len(res) != 2:
             raise WrongAnswer("Wrong number of values. Print two numbers: true positives and true negatives normalized over the true rows.")
         if res[0] != ANSWER[0]:
-            raise WrongAnswer("Wrong true positives value.")
+            raise WrongAnswer("Wrong true positives value (the first value).")
         if res[1] != ANSWER[1]:
-            raise WrongAnswer("Wrong true negatives value.")
+            raise WrongAnswer("Wrong true negatives value (teh second value).")
         return CheckResult.correct()
 
 
