@@ -15,15 +15,28 @@ class SplitTest(StageTest):
         output = pr.execute("test/data_stage2.csv").strip()
         output = output.replace(",", "").replace("]", "[").split("[")
         output = [x for x in output if x != "" and x != " "]
+        print(output)
         if len(output) != 3:
             raise WrongAnswer("Your answer should contain five items: float value, string, value and two lists.")
         res = []
         first = output[0].strip().split()
-        res.append(float(first[0]))
+        try:
+            res.append(float(first[0]))
+        except Exception:
+            raise WrongAnswer("The first value should be float.")
         res.append(first[1])
-        res.append(int(first[2]))
-        res.append([int(x) for x in output[1].split()])
-        res.append([int(x) for x in output[2].split()])
+        try:
+            res.append(int(first[2]))
+        except Exception:
+            raise WrongAnswer("The third value should be integer.")
+        try:
+            res.append([int(x) for x in output[1].split()])
+        except Exception:
+            raise WrongAnswer("The fourth item should be a list of integers.")
+        try:
+            res.append([int(x) for x in output[2].split()])
+        except Exception:
+            raise WrongAnswer("The fifth item should be a list of integers.")
         if len(res) != 5:
             raise WrongAnswer("Your answer should contain five items: float value, string, value, two lists.")
         if res[0] != ANSWER[0]:

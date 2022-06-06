@@ -37,12 +37,15 @@ class TreePredTest(StageTest):
                 continue
             if res[i] != ANSWER[i]:
                 if i == 5:
-                    raise WrongAnswer("Wrong prediction for the first sample.")
+                    raise WrongAnswer("Wrong prediction for the first sample."
+                                      "\nCorrect message template: 'Predicted label: 0'.")
                 elif i == 12:
-                    raise WrongAnswer("Wrong prediction for the second sample.")
+                    raise WrongAnswer("Wrong prediction for the second sample."
+                                      "\nCorrect message template: 'Predicted label: 0'.")
                 else:
                     raise WrongAnswer(f"Wrong log message on line {i+1}."
-                                      "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first.")
+                                      "\nIt may be useful to check the traversal order in the recursive split function: go to the left child first."
+                                      "\nCorrect message template: 'Considering decision rule on feature Sex with value 1'.")
         return CheckResult.correct()
 
 
